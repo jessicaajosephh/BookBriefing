@@ -70,7 +70,7 @@ class Review {
             body: JSON.stringify(params)
         }
 
-        fetch(`http://localhost:3000/reviews/${this.review_id}/comments/${this.id}`, configObj)
+        fetch(`http://localhost:3000/reviews/${this.id}/comments`, configObj)
         .then(resp => resp.json())
         .then(reviewsInfo => Review.renderReviews(reviewsInfo))
     }

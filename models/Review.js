@@ -47,6 +47,14 @@ class Review {
             likeButton.innerText = "♥"
             likeButton.addEventListener("click", likeReview.bind(review))
 
+            div.parentElement(h3)
+            div.appendChild(h4)
+            div.appendChild(p)
+            div.appendChild(likeButton)
+            reviewComments.forEach(li => ul.appendChild(li))
+            div.appendChild(ul)
+
+            reviewsContainer().appendChild(div)
         })
     }
 

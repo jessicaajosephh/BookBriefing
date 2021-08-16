@@ -13,7 +13,6 @@ class Review {
         fetch("http://localhost:3000/reviews")
         .then(resp => resp.json())
         .then(json => {
-            debugger
             Review.renderReviews(json)
         })
     }
@@ -59,6 +58,10 @@ class Review {
 
             reviewsContainer().appendChild(div)
         })
+    }
+
+    static likeReview(e){
+
     }
 
 }

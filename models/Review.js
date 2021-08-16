@@ -92,7 +92,7 @@ class Review {
             input.placeholder = "Type comment here..."
             submitComment.type = "submit"
             submitComment.innerText = "Submit"
-            form.addEventListener("submit", Comment.createComment.bind(review))
+            form.addEventListener("submit", Review.createComment.bind(review))
             form.appendChild(input)
             form.appendChild(submitComment)
 

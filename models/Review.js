@@ -44,7 +44,12 @@ class Review {
         
         fetch("http://localhost:3000/reviews", configObj)
         .then(resp => resp.json())
-        .then(json => Review.renderReviews(json))
+        .then(json => {
+            e.target.children[0].value = ""
+            e.target.children[1].value = ""
+            e.target.children[2].value = ""
+            Review.renderReviews(json)
+        })
     }
 
     static renderReviews(reviewsInfo){
@@ -60,6 +65,7 @@ class Review {
             let likeButton = document.createElement("button")
             let ul = document.createElement("ul")
             let rLikes = document.createElement("p")
+            let deleteButton = document.createElement("button")
 
             let reviewComments = review.comments.map(comment => {
                 let li = document.createElement("li")
@@ -70,6 +76,8 @@ class Review {
                 commentContent.innerText = comment.content 
                 commentLikes.innerText = comment.likes 
                 likeButton.innerText = "♥"
+                deleteButton.innerText = "🗑️"
+                deleteButton.addEventListener("click", Review.deleteReview.bind(review))
                 div.appendChild(commentContent)
                 div.appendChild(commentLikes)
                 div.appendChild(likeButton)
@@ -97,6 +105,10 @@ class Review {
 
             reviewsContainer().appendChild(div)
         })
+    }
+
+    static deleteReview(e){
+
     }
 
     static likeReview(e){

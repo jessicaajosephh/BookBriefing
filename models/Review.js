@@ -28,7 +28,7 @@ class Review {
             h4.innerText = review.author 
             p.innerText = review.content
             likeButton.innerText = "♥"
-            likeButton.addEventListener("click", likeReview)
+            likeButton.addEventListener("click", likeReview.bind(review))
         })
     }
 

@@ -20,15 +20,16 @@ class Review {
     }
 
     static createReview(e){
-        let title = e.target.children[0]
-        let author = e.target.children[1]
-        let content = e.target.children[2]
+        e.preventDefault();
+        let title = e.target.children[0].value
+        let author = e.target.children[1].value
+        let content = e.target.children[2].value 
 
         let params = {
             review: {
-                title,
-                author,
-                content
+                title: title,
+                author: author,
+                content: content 
             }
         }
 

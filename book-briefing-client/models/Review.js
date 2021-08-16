@@ -57,7 +57,7 @@ class Review {
         let params = {
             comment: {
                 content: e.target.children[0].value,
-                review_id = this.id  
+                review_id: this.id  
             }
         }
 

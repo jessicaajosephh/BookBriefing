@@ -15,4 +15,10 @@ class Review {
         .then(json => Review.renderReviews(json))
     }
 
+    static renderReviews(reviewsInfo){
+        reviewsInfo.forEach(review => {
+            
+        })
+    }
+
 }

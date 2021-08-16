@@ -23,6 +23,12 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def destroy 
+        review = Review.find(params[:id])
+        review.destroy
+        render json: Review.all.to_json(:include => :comments)
+    end
+
     private 
 
     def review_params

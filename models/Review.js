@@ -17,7 +17,11 @@ class Review {
 
     static renderReviews(reviewsInfo){
         reviewsInfo.forEach(review => {
-            
+            let div = document.createElement("div")
+            let h3 = document.createElement("h3")
+            let h4 = document.createElement("h4")
+            let p = document.createElement("p")
+            let likeButton = document.createElement("button")
         })
     }
 

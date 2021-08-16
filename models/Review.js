@@ -66,6 +66,9 @@ class Review {
             let ul = document.createElement("ul")
             let rLikes = document.createElement("p")
             let deleteButton = document.createElement("button")
+            let form = document.createElement("form")
+            let input = document.createElement("input")
+            let submitComment = document.createElement("button")
 
             let reviewComments = Comment.renderComments(review.comments)
 
@@ -80,6 +83,14 @@ class Review {
             likeButton.addEventListener("click", Review.likeReview.bind(review))
             deleteButton.innerText = "🗑️"
             deleteButton.addEventListener("click", Review.deleteReview.bind(review))
+
+            input.type = "text"
+            input.placeholder = "Type comment here..."
+            submitComment.type = "submit"
+            submitComment.innerText = "Submit"
+            form.addEventListener("submit", Comment.createComment.bind(review))
+            form.appendChild(input)
+            form.appendChild(submitComment)
 
             div.appendChild(h3)
             div.appendChild(h4)

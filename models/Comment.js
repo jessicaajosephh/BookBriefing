@@ -29,6 +29,10 @@ class Comment {
         .then(reviewsInfo => Review.renderReviews(reviewsInfo))
     }
 
+    static createComment(){
+
+    }
+
     static renderComments(comments){
         let reviewComments = comments.map(comment => {
             let li = document.createElement("li")
@@ -47,6 +51,7 @@ class Comment {
             div.appendChild(commentLikes)
             div.appendChild(likeButton)
             li.appendChild(div)
+            div.appendChild(form)
             return li
         })
         return reviewComments

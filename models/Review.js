@@ -17,6 +17,10 @@ class Review {
         })
     }
 
+    static createReview(e){
+
+    }
+
     static renderReviews(reviewsInfo){
         clearContainer(reviewsContainer())
         reviewsInfo.forEach(review => {

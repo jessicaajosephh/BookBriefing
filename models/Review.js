@@ -22,6 +22,22 @@ class Review {
             let h4 = document.createElement("h4")
             let p = document.createElement("p")
             let likeButton = document.createElement("button")
+            
+            let reviewComments = review.comments.map(comment => {
+                let li = document.createElement("li")
+                let div = document.createElement("div")
+                let commentContent = document.createElement("p")
+                let commentLikes = document.createElement("p")
+                let likeButton = document.createElement("button")
+                commentContent.innerText = comment.content 
+                commentLikes.innerText = comment.likes 
+                likeButton.innerText = "♥"
+                div.appendChild(commentContent)
+                div.appendChild(commentLikes)
+                div.appendChild(likeButton)
+                li.appendChild(div)
+                return li 
+            })
 
             div.id = review.id 
             h3.innerText = review.title
@@ -29,6 +45,7 @@ class Review {
             p.innerText = review.content
             likeButton.innerText = "♥"
             likeButton.addEventListener("click", likeReview.bind(review))
+
         })
     }
 

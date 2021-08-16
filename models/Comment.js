@@ -1,5 +1,5 @@
 class Comment {
-    
+
     constructor(id, content, likes, review_id){
         this.id = id 
         this.content = content 
@@ -17,6 +17,7 @@ class Comment {
             commentContent.innerText = comment.content
             commentLikes.innerText = comment.likes 
             likeButton.innerText = "♥"
+            likeButton.addEventListener("click", likeComment.bind(comment))
             div.appendChild(commentContent)
             div.appendChild(commentLikes)
             div.appendChild(likeButton)

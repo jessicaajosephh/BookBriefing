@@ -76,8 +76,6 @@ class Review {
                 commentContent.innerText = comment.content 
                 commentLikes.innerText = comment.likes 
                 likeButton.innerText = "♥"
-                deleteButton.innerText = "🗑️"
-                deleteButton.addEventListener("click", Review.deleteReview.bind(review))
                 div.appendChild(commentContent)
                 div.appendChild(commentLikes)
                 div.appendChild(likeButton)
@@ -94,12 +92,15 @@ class Review {
             rLikes.innerText = review.likes
             likeButton.innerText = "♥"
             likeButton.addEventListener("click", Review.likeReview.bind(review))
+            deleteButton.innerText = "🗑️"
+            deleteButton.addEventListener("click", Review.deleteReview.bind(review))
 
             div.appendChild(h3)
             div.appendChild(h4)
             div.appendChild(p)
             div.appendChild(rLikes)
             div.appendChild(likeButton)
+            div.appendChild(deleteButton)
             reviewComments.forEach(li => ul.appendChild(li))
             div.appendChild(ul)
 

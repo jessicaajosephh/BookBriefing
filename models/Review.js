@@ -48,10 +48,10 @@ class Review {
 
     static renderReviews(reviewsInfo){
         clearContainer(reviewsContainer())
-        Review.all = []
+        // Review.all = []
         reviewsInfo.forEach(review => {
-            new_review = new Review(review.id, review.title, review.author, review.content, review.likes, review.comments)
-            Review.all.push(new_review)
+            // new_review = new Review(review.id, review.title, review.author, review.content, review.likes, review.comments)
+            // Review.all.push(new_review)
             let div = document.createElement("div")
             let h3 = document.createElement("h3")
             let h4 = document.createElement("h4")

@@ -43,6 +43,8 @@ class Review {
             })
 
             div.id = review.id 
+            div.style.padding = "20px"
+            div.className = "card"
             h3.innerText = review.title
             h4.innerText = review.author 
             p.innerText = review.content

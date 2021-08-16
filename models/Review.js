@@ -116,7 +116,7 @@ class Review {
             }
         }
 
-        fetch("http://localhost:3000", configObj)
+        fetch(`http://localhost:3000/reviews/${this.id}`, configObj)
         .then(resp => resp.json())
         .then(json => Review.renderReviews(json))
     }

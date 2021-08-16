@@ -24,7 +24,7 @@ class Comment {
             body: JSON.stringify(params)
         }
 
-        fetch(`http://localhost:3000/reviews/${this.review_id}/comments/${comment.id}`, configObj)
+        fetch(`http://localhost:3000/reviews/${this.review_id}/comments/${this.id}`, configObj)
         .then(resp => resp.json())
         .then(reviewsInfo => Review.renderReviews(reviewsInfo))
     }
@@ -39,7 +39,7 @@ class Comment {
             commentContent.innerText = comment.content
             commentLikes.innerText = comment.likes 
             likeButton.innerText = "♥"
-            likeButton.addEventListener("click", likeComment.bind(comment))
+            likeButton.addEventListener("click", Comment.likeComment.bind(comment))
             div.appendChild(commentContent)
             div.appendChild(commentLikes)
             div.appendChild(likeButton)

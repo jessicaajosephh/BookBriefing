@@ -15,3 +15,5 @@ Comment.create(content:"Wish I could read this for the first time again!", post_
 
 Comment.create(content:"Great book!", post_id: 2)
 Comment.create(content:"Kinda over-rated but I like it!", post_id: 2)
+
+puts "Info Seeded"

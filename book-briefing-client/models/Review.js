@@ -11,6 +11,10 @@ class Review {
         this.comments = [...comments] 
     }
 
+    save(){
+        Review.all.push(this)
+    }
+
     static fetchReviews(){
         fetch("http://localhost:3000/reviews")
         .then(resp => resp.json())
@@ -78,9 +82,11 @@ class Review {
     static renderReviews(reviewsInfo){
         clearContainer(reviewsContainer())
         // Review.all = []
-        reviewsInfo.forEach(review => {
+        reviewsInfo.forEach(reviewsInfo => {
             // new_review = new Review(review.id, review.title, review.author, review.content, review.likes, review.comments)
             // Review.all.push(new_review)
+            let review = new Review(reviewsInfo.id, reviewsInfo.title, reviewsInfo.author, reviewsInfo.content, reviewsInfo.likes, reviewsInfo.comments)
+            review.save()
             let div = document.createElement("div")
             let h3 = document.createElement("h3")
             let h4 = document.createElement("h4")

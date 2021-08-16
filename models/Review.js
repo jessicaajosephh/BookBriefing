@@ -25,6 +25,7 @@ class Review {
             let p = document.createElement("p")
             let likeButton = document.createElement("button")
             let ul = document.createElement("ul")
+            let rLikes = document.createElement("p")
 
             let reviewComments = review.comments.map(comment => {
                 let li = document.createElement("li")
@@ -48,12 +49,14 @@ class Review {
             h3.innerText = review.title
             h4.innerText = review.author 
             p.innerText = review.content
+            rLikes.innerText = review.likes
             likeButton.innerText = "♥"
             likeButton.addEventListener("click", Review.likeReview.bind(review))
 
             div.appendChild(h3)
             div.appendChild(h4)
             div.appendChild(p)
+            div.appendChild(rLikes)
             div.appendChild(likeButton)
             reviewComments.forEach(li => ul.appendChild(li))
             div.appendChild(ul)

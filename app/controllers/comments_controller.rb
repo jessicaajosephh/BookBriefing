@@ -2,7 +2,11 @@ class CommentsController < ApplicationController
 
     def update 
         comment = Comment.find(params[:id])
-        if comment.update()
+        if comment.update(comment_params)
+            render json: Review.all.to_json(:include => :comments)
+        else
+
+        end
     end
 
     private 

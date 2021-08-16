@@ -1,5 +1,7 @@
 class Review {
 
+    static all = []
+
     constructor(id, title, author, content, likes, comments){
         this.id = id
         this.title = title
@@ -38,11 +40,18 @@ class Review {
             },
             body: JSON.stringify(params)
         }
+        
+        fetch("http://localhost:3000/reviews", configObj)
+        .then(resp => resp.json())
+        .then(json => render)
     }
 
     static renderReviews(reviewsInfo){
         clearContainer(reviewsContainer())
+        Review.all = []
         reviewsInfo.forEach(review => {
+            new_review = new Review(review.id, review.title, review.author, review.content, review.likes, review.comments)
+            Review.all.push(new_review)
             let div = document.createElement("div")
             let h3 = document.createElement("h3")
             let h4 = document.createElement("h4")

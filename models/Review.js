@@ -11,8 +11,11 @@ class Review {
 
     static fetchReviews(){
         fetch("http://localhost:3000/reviews")
-        .then(resp => resp.json)
-        .then(json => Review.renderReviews(json))
+        .then(resp => resp.json())
+        .then(json => {
+            debugger
+            Review.renderReviews(json)
+        })
     }
 
     static renderReviews(reviewsInfo){

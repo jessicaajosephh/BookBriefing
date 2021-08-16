@@ -63,7 +63,15 @@ class Review {
     }
 
     static likeReview(e){
+        let configObj = {
+            method: "PATCH",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json"
+            }
+        }
 
+        fetch(`http://localhost:3000/reviews/${this.id}`)
     }
 
 }

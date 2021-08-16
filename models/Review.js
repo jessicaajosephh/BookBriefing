@@ -108,7 +108,17 @@ class Review {
     }
 
     static deleteReview(e){
+        let configObj = {
+            method: "DELETE",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json"
+            }
+        }
 
+        fetch("http://localhost:3000", configObj)
+        .then(resp => resp.json())
+        .then(json => Review.renderReviews(json))
     }
 
     static likeReview(e){

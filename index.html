@@ -9,18 +9,17 @@
     <script src="models/Comment.js"></script>
     <title>Book Briefing</title>
 </head>
-<body>
+<body class="container">
     <h1>Welcome to Book Briefing</h1>
 
     <form>
         <input type="text" id="title">
         <input type="text" id="author">
-        <input type="text" id="content">
+        <textarea id="content" rows="8" cols="60" placeholder="Content"></textarea>
         <button type="submit">Create Review</button>
     </form>
     <br>
 
-    <h3>All Reviews:</h3>
     <div id="reviews-container">
 
     </div>

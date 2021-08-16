@@ -63,12 +63,20 @@ class Review {
     }
 
     static likeReview(e){
+        this.likes += 1
+        let params = {
+            review: {
+                likes: this.likes
+            }
+        }
+
         let configObj = {
             method: "PATCH",
             headers: {
                 "Accept": "application/json",
                 "Content-type": "application/json"
-            }
+            },
+            body: JSON.stringify(params)
         }
 
         fetch(`http://localhost:3000/reviews/${this.id}`)

@@ -67,21 +67,7 @@ class Review {
             let rLikes = document.createElement("p")
             let deleteButton = document.createElement("button")
 
-            let reviewComments = review.comments.map(comment => {
-                let li = document.createElement("li")
-                let div = document.createElement("div")
-                let commentContent = document.createElement("p")
-                let commentLikes = document.createElement("p")
-                let likeButton = document.createElement("button")
-                commentContent.innerText = comment.content 
-                commentLikes.innerText = comment.likes 
-                likeButton.innerText = "♥"
-                div.appendChild(commentContent)
-                div.appendChild(commentLikes)
-                div.appendChild(likeButton)
-                li.appendChild(div)
-                return li 
-            })
+            let reviewComments = Comment.renderComments(review.comments)
 
             div.id = review.id 
             div.style.padding = "20px"

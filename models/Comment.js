@@ -1,4 +1,5 @@
 class Comment {
+    
     constructor(id, content, likes, review_id){
         this.id = id 
         this.content = content 

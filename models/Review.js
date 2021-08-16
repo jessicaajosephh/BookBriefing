@@ -43,7 +43,7 @@ class Review {
         
         fetch("http://localhost:3000/reviews", configObj)
         .then(resp => resp.json())
-        .then(json => render)
+        .then(json => Review.renderReviews(json))
     }
 
     static renderReviews(reviewsInfo){

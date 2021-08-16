@@ -7,6 +7,28 @@ class Comment {
         this.review_id = review_id 
     }
 
+    static likeComment(e){
+        this.likes += 1
+        let params = {
+            comment: {
+                likes: this.likes
+            }
+        }
+
+        let configObj = {
+            method: "PATCH",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(params)
+        }
+
+        fetch(`http://localhost:3000/reviews/${this.review_id}/comments/${comment.id}`, configObj)
+        .then(resp => resp.json())
+        .then(reviewsInfo => Review.renderReviews(reviewsInfo))
+    }
+
     static renderComments(comments){
         let reviewComments = comments.map(comment => {
             let li = document.createElement("li")

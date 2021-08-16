@@ -52,6 +52,10 @@ class Review {
         })
     }
 
+    static createComment(){
+
+    }
+
     static renderReviews(reviewsInfo){
         clearContainer(reviewsContainer())
         // Review.all = []

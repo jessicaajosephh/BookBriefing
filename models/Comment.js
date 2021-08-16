@@ -29,9 +29,6 @@ class Comment {
         .then(reviewsInfo => Review.renderReviews(reviewsInfo))
     }
 
-    static createComment(){
-
-    }
 
     static renderComments(comments){
         let reviewComments = comments.map(comment => {

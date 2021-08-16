@@ -52,8 +52,27 @@ class Review {
         })
     }
 
-    static createComment(){
+    static createComment(e){
+        e.preventDefault();
+        let params = {
+            comment: {
+                content: e.target.children[0].value,
+                review_id = this.id  
+            }
+        }
 
+        let configObj = {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(params)
+        }
+
+        fetch(`http://localhost:3000/reviews/${this.review_id}/comments/${this.id}`, configObj)
+        .then(resp => resp.json())
+        .then(reviewsInfo => Review.renderReviews(reviewsInfo))
     }
 
     static renderReviews(reviewsInfo){

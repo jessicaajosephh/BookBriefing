@@ -22,7 +22,8 @@ class Review {
             let h4 = document.createElement("h4")
             let p = document.createElement("p")
             let likeButton = document.createElement("button")
-            
+            let ul = document.createElement("ul")
+
             let reviewComments = review.comments.map(comment => {
                 let li = document.createElement("li")
                 let div = document.createElement("div")

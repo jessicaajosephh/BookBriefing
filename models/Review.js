@@ -22,6 +22,8 @@ class Review {
             let h4 = document.createElement("h4")
             let p = document.createElement("p")
             let likeButton = document.createElement("button")
+
+            div.id = review.id 
         })
     }
 

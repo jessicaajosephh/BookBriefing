@@ -14,6 +14,15 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def create 
+        review = Review.new(review_params)
+        if review.save
+            render json: Review.all.to_json(:include => :comments)
+        else
+            render json: {errors: "There was an error"}
+        end
+    end
+
     private 
 
     def review_params

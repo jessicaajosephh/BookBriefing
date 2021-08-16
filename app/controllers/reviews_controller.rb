@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     def update 
         review = Review.find(params[:id])
         if review.update(review_params)
-            render json: Review.to_json(:include => :comments)
+            render json: Review.all.to_json(:include => :comments)
         else
             render json: {errors: "There was an error"}
         end

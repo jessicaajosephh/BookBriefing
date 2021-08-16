@@ -18,6 +18,7 @@ class Review {
     }
 
     static renderReviews(reviewsInfo){
+        clearContainer(reviewsContainer())
         reviewsInfo.forEach(review => {
             let div = document.createElement("div")
             let h3 = document.createElement("h3")

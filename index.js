@@ -9,6 +9,8 @@ const clearContainer = (element) => {
 }
 
 const startProgram = () => {
+    let form = document.getElementById("form")
+    form.addEventListener("submit", Review.createReview)
     Review.fetchReviews()
 }
 

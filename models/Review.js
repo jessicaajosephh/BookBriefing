@@ -24,6 +24,11 @@ class Review {
             let likeButton = document.createElement("button")
 
             div.id = review.id 
+            h3.innerText = review.title
+            h4.innerText = review.author 
+            p.innerText = review.content
+            likeButton.innerText = "♥"
+            likeButton.addEventListener("click", likeReview)
         })
     }
 

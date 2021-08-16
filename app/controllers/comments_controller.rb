@@ -5,4 +5,10 @@ class CommentsController < ApplicationController
         if comment.update()
     end
 
+    private 
+
+    def comment_params
+        params.require(:comment).permit(:content, :likes, :review_id)
+    end
+
 end

@@ -89,7 +89,7 @@ class Review {
             review.save()
             let div = document.createElement("div")
             let h3 = document.createElement("h3")
-            let h4 = document.createElement("h4")
+            let h5 = document.createElement("h5")
             let p = document.createElement("p")
             let likeButton = document.createElement("button")
             let ul = document.createElement("ul")
@@ -104,8 +104,9 @@ class Review {
             div.id = review.id 
             div.style.padding = "20px"
             div.className = "card"
+            div.style.background = "#ecf2b1"
             h3.innerText = review.title
-            h4.innerText = review.author 
+            h5.innerText = review.author 
             p.innerText = review.content
             rLikes.innerText = review.likes
             likeButton.innerText = "♥"
@@ -122,7 +123,7 @@ class Review {
             form.appendChild(submitComment)
 
             div.appendChild(h3)
-            div.appendChild(h4)
+            div.appendChild(h5)
             div.appendChild(p)
             div.appendChild(rLikes)
             div.appendChild(likeButton)

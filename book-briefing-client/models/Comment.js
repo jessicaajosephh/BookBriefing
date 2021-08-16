@@ -38,7 +38,7 @@ class Comment {
             let commentLikes = document.createElement("p")
             let likeButton = document.createElement("button")
             div.style.padding = "25px"
-            div.style.background = "#ecf2ff"
+            div.style.background = "#fadabc"
             div.className = "card"
             commentContent.innerText = comment.content
             commentLikes.innerText = comment.likes 

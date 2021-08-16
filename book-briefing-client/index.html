@@ -8,15 +8,26 @@
     <script src="models/Review.js"></script>
     <script src="models/Comment.js"></script>
     <title>Book Briefing</title>
+    <style>
+        body {
+            background-image: url('https://i0.wp.com/poshpennies.com/wp-content/uploads/2019/07/pastel-books-grouped-by-color.jpg?resize=680%2C680&ssl=1');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+ 
 </head>
 <body class="container">
-    <h1>Welcome to Book Briefing</h1>
 
-    <form id="form">
-        <input type="text">
-        <input type="text">
-        <textarea rows="8" cols="60" placeholder="Content"></textarea>
-        <button type="submit">Create Review</button>
+    <h1 class="welcome-title">🅱🅾🅾🅺 🅱🆁🅸🅴🅵🅸🅽🅶</h1>
+
+    <form class="form" id="form">
+        <input type="text" placeholder="Book Title">
+        <input type="text" placeholder="Author's Name">
+        <textarea rows="8" cols="60" placeholder="Book Summary"></textarea>
+        <button type="submit">Make A Briefing</button>
     </form>
     <br>
 
@@ -24,11 +35,21 @@
 
     </div>
 
+    <style>
+
+        .welcome-title {
+            text-align: center;
+        }
+
+        .form {
+            text-align: center;
+            background: #ecf2b1;
+        }
+
+    </style>
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
 </html>

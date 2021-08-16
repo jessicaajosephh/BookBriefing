@@ -100,6 +100,7 @@ class Review {
             div.appendChild(deleteButton)
             reviewComments.forEach(li => ul.appendChild(li))
             div.appendChild(ul)
+            div.appendChild(form)
 
             reviewsContainer().appendChild(div)
         })

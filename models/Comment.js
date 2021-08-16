@@ -51,7 +51,6 @@ class Comment {
             div.appendChild(commentLikes)
             div.appendChild(likeButton)
             li.appendChild(div)
-            div.appendChild(form)
             return li
         })
         return reviewComments

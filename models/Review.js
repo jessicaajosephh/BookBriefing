@@ -18,7 +18,26 @@ class Review {
     }
 
     static createReview(e){
+        let title = e.target.children[0]
+        let author = e.target.children[1]
+        let content = e.target.children[2]
 
+        let params = {
+            review: {
+                title,
+                author,
+                content
+            }
+        }
+
+        let configObj = {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(params)
+        }
     }
 
     static renderReviews(reviewsInfo){
